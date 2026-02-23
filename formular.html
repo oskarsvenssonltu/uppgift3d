@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Supportformulär</title>
+</head>
+<body>
+
+	<!-- Huvudrubrik -->
+	<h1>Supportformulär</h1>
+
+	<!-- Brödtext -->
+	<p>Här kan du skicka in ett ärende till vår supportavdelning.</p>
+
+		<!-- Formläret börjar -->
+		<!-- action används när/om fomrläret skickas, onsubmit används för att validera värderna i formuläret -->
+	<form action="https://swplayground.ltu.se/resources/parse_form.php" method="POST" onsubmit="return valideraFormular()">
+
+				<!-- Textruta för namn, obligatorisk -->
+		<div>
+				<label for="namn">Ditt namn:</label>
+				<input type="text" id="namn" name="namn">
+				<span id="felNamn"></span>
+		</div>
+
+				<!-- Textruta för telefon, obligatorisk -->
+		<div>	
+				<label for="telefon">Telefon:</label>
+				<input 
+					type="text" 
+					id="telefon" 
+					name="telefon" 
+					aria-describedby="hjalpTelefon"
+				><span id="felTelefon"></span>
+				<small id="hjalpTelefon">Med landskod, exempelvis +46701234567</small>
+		</div>	
+
+		<!-- Textruta för epost, validerar att det är en giltig e-postadress via type email -->
+		<div> 
+				<label for="epost">E-post:</label>
+				<input type="email" id="epost" name="epost">
+		</div>
+
+				<!-- Dropdownlista för prioritet -->
+		<div>
+				<label for="prioritet">Prioritet:</label>
+					<select 
+							id="prioritet" name="prioritet">
+							<option value="1">Låg</option>
+							<option value="2">Normal</option>
+							<option value="3">Hög</option>
+					</select>
+		</div>
+
+						<!-- Checkbox för ort -->
+		<div>
+
+			      <!-- Använder fieldset för att gruppera radioknapparna, stylingen justeras i CSS för att matcha instruktionerna -->
+					<fieldset>
+								<legend>Tilldela till ort:</legend>
+								
+								<label><input type="radio" id="gbg" name="ort" value="gbg">Göteborg</label>
+
+								
+								<label><input type="radio" id="sthlm" name="ort" value="sthlm">Stockholm</label>
+
+								
+								<label><input type="radio" id="ume" name="ort" value="ume">Umeå</label>
+
+								
+								<label><input type="radio" id="lule" name="ort" value="lule">Luleå</label>
+					</fieldset>
+		</div>
+
+				<!-- Dropdownlista för kategori -->
+		<div>
+				<label for="kategori">Kategori:</label>
+					<select 
+							id="kategori" name="kategori">
+							<option value="fakt">Fakturering</option>
+							<option value="net">Internet</option>
+							<option value="tel">Telefoni</option>
+							<option value="epost">E-post</option>
+
+					</select>
+		</div>
+
+				<!-- Textruta för rubrik -->
+		<div>	
+				<label for="rubrik">Rubrik:</label>
+				<input type="text" id="rubrik" name="rubrik">
+		</div>	
+
+						<!-- Textfält för rubrik -->
+		<div>
+				<label for="beskrivning">Beskrivning</label>
+					<textarea 
+					id="beskrivning" 
+					name="beskrivning" 
+					rows="8" 
+					cols="30"
+					aria-describedby="hjalpBeskrivning"></textarea>
+					<span id="felBeskrivning"></span>
+					<small id=hjalpBeskrivning>Minst 50 tecken</small>
+		</div>
+
+				<!-- Submit och reset knapp -->
+		<div class="knappar">
+				<input type="reset" value="Reset">
+				<input type="submit" name="skicka" value="Submit">
+		</div>
+
+	</form>
+
+		<!-- Länk till javascript filen -->
+		<script src="validering.js"></script>
+</body>
+</html>
