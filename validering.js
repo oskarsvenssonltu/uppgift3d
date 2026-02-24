@@ -34,7 +34,7 @@ function valideraFormular() {
    //Kollar om telefonnummret är tilltigt via funktionen giltigTelefon 
   } else if (!giltigTelefon(telefon)) {
     document.getElementById("felTelefon").textContent =
-      "Telefonnummer måste vara ett nummer";
+      "Telefonnummer måste anges med landskod, exempelvis +46701234567";
     validerad = false;
   }
 

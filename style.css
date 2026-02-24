@@ -13,7 +13,7 @@ body {
   margin: 0px;
 }
 
-/* Design för själva formläret som blir en "box" som sidan fokuserar på */
+/* Design för själva formläret som agerar som en "box" */
 
 form {
   background-color: #ffffff;
@@ -65,6 +65,8 @@ form > div:last-child {
   }
 }
 
+/* På mindre skärmar (mobil) visas radioknapparna som en kolumn */
+
 fieldset label {
   display: flex;
   align-items: center;
@@ -78,7 +80,6 @@ fieldset label {
   }
 
 /* Marginal för "rubrikerna" (label) */
-
   form label {
     margin-bottom: 2px;
   }
@@ -88,12 +89,14 @@ fieldset label {
     margin-bottom: 8px;
   }
 
+/* Design av input text och email, select och textarea. Större än standard. */
  form input[type="text"], form input[type="email"], form select, form textarea {
   width: 100%;
   padding: 4px 8px;
   box-sizing: border-box;
 }
 
+/* Design av submit och reset. Jag lägger väljer att använda flex-direction row för att få de på samma rad. */
 .knappar {
   display: flex;
   gap: 12px;
@@ -109,21 +112,25 @@ fieldset label {
   border: none;
 }
 
+/* Sätter bakgrundsfärgen till "ljusblå" för att den ska vara mer inbjudande än reset */
 .knappar input[type="submit"] {
   background-color: #3466d1;
   color: #ffffff;
   font-weight: 500;
 }
 
+/* Hovereffekt */
 .knappar input[type="submit"]:hover {
   background-color: #3558cc;
 }
 
+/* Sätter bakgrundsfärgen till "ljusgrå" för att skilja den från den mer inbjudande submit knappen */
 .knappar input[type="reset"] {
   background-color: #ebedf2;
   color: #374151;
 }
 
+/* Hovereffekt */
 .knappar input[type="reset"]:hover {
   background-color: #e4e6eb;
 }
