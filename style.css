@@ -4,9 +4,10 @@ body {
   background-color: #f2f7fc;
   display: grid;
   justify-items: center;
-  padding-top: 32px;
+  padding-top: 12px;
   font-family: Roboto, Verdana, Helvetica, sans-serif;
   font-size: 16px;
+  margin: 0px;
 }
 
 /* Design för själva formläret som blir en "box" som sidan fokuserar på */
